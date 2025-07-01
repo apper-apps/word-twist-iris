@@ -25,12 +25,13 @@ const eventService = {
     });
   },
 
-  async create(eventData) {
+async create(eventData) {
     return new Promise((resolve) => {
       setTimeout(() => {
         const newEvent = {
           ...eventData,
           Id: nextId++,
+          media: [],
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString()
         };
