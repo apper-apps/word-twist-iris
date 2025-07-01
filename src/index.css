@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'react-toastify/dist/ReactToastify.css';
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    min-height: 100vh;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .letter-tile {
+    @apply relative bg-gradient-to-br from-slate-700 to-slate-800 border border-slate-600/50 
+           text-white font-bold text-2xl flex items-center justify-center cursor-pointer
+           transition-all duration-150 ease-out hover:scale-110 hover:shadow-lg
+           hover:shadow-primary-500/25 select-none;
+  }
+  
+  .letter-tile.selected {
+    @apply bg-gradient-to-br from-primary-500 to-secondary-500 border-primary-400/50
+           shadow-lg shadow-primary-500/30 scale-105;
+  }
+  
+  .letter-tile.connected {
+    @apply bg-gradient-to-br from-secondary-500 to-accent-500 border-secondary-400/50
+           shadow-lg shadow-secondary-500/30;
+  }
+  
+  .word-item {
+    @apply bg-gradient-to-r from-slate-800/50 to-slate-700/50 border border-slate-600/30
+           backdrop-blur-sm text-white px-4 py-2 rounded-lg
+           transition-all duration-200 hover:border-primary-500/50;
+  }
+  
+  .score-burst {
+    @apply absolute pointer-events-none text-accent-400 font-bold text-xl
+           animate-word-found;
+  }
+}
+
+/* Toast Container Overrides */
+.Toastify__toast-container {
+  width: auto;
+  max-width: 400px;
+}
+
+.Toastify__toast {
+  @apply bg-surface-800 border border-slate-600/50 text-white rounded-xl;
+  min-height: 60px;
+  padding: 12px 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+.Toastify__toast--success {
+  @apply border-success-500/50;
+}
+
+.Toastify__toast--error {
+  @apply border-error-500/50;
+}
+
+.Toastify__toast--warning {
+  @apply border-warning-500/50;
+}
+
+.Toastify__progress-bar {
+  @apply bg-primary-500;
+}
+
+.Toastify__close-button {
+  @apply text-slate-400 hover:text-white;
+}
