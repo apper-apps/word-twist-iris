@@ -10,10 +10,11 @@ export default {
         'display': ['Righteous', 'cursive'],
         'sans': ['Inter', 'system-ui', 'sans-serif'],
       },
-      colors: {
+colors: {
         primary: {
           50: '#eef2ff',
           100: '#e0e7ff',
+          400: '#818cf8',
           500: '#6366f1',
           600: '#5b5bf6',
           700: '#4f46e5',
